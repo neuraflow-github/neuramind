@@ -20,15 +20,16 @@ class OrganizationModel(BaseModel):
 
     @staticmethod
     def to_db_dict(items: list["OrganizationModel"]) -> list[dict]:
+        embeddings = OrganizationModel.get_embeddings(items)
         organization_db_dicts = []
-        for x_item in items:
+        for x_item, x_embedding in zip(items, embeddings):
             organization_db_dicts.append(
                 {
                     "tenant_id": x_item.tenant_id,
                     "source": x_item.source,
                     "name": x_item.name,
                     "address": x_item.address,
-                    "embedding": "TODO",
+                    "embedding": x_embedding,
                 }
             )
         return organization_db_dicts

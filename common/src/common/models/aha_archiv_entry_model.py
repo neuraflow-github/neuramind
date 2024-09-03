@@ -18,14 +18,15 @@ class AhaArchivEntryModel(BaseModel):
 
     @staticmethod
     def to_db_dict(items: list["AhaArchivEntryModel"]) -> list[dict]:
+        embeddings = AhaArchivEntryModel.get_embeddings(items)
         aha_archiv_entry_db_dicts = []
-        for x_item in items:
+        for x_item, x_embedding in zip(items, embeddings):
             aha_archiv_entry_db_dicts.append(
                 {
                     "tenant_id": x_item.tenant_id,
                     "source": x_item.source,
                     "text": x_item.text,
-                    "embedding": "TODO",
+                    "embedding": x_embedding,
                 }
             )
         return aha_archiv_entry_db_dicts

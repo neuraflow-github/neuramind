@@ -20,8 +20,9 @@ class ServiceModel(BaseModel):
 
     @staticmethod
     def to_db_dict(items: list["ServiceModel"]) -> list[dict]:
+        embeddings = ServiceModel.get_embeddings(items)
         service_db_dicts = []
-        for x_item in items:
+        for x_item, x_embedding in zip(items, embeddings):
             service_db_dicts.append(
                 {
                     "tenant_id": x_item.tenant_id,
@@ -29,7 +30,7 @@ class ServiceModel(BaseModel):
                     "name": x_item.name,
                     "description": x_item.description,
                     "price": x_item.price,
-                    "embedding": "TODO",
+                    "embedding": x_embedding,
                 }
             )
         return service_db_dicts

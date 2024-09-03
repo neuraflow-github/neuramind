@@ -3,6 +3,8 @@ from abc import ABC, abstractmethod
 
 from openai import AzureOpenAI
 
+from common.utitlities.config import config
+
 
 class BaseModel(ABC):
     def __init__(self, type: str, db_node_name: str, tenant_id: str, source: str):
@@ -16,24 +18,22 @@ class BaseModel(ABC):
         pass
 
     @staticmethod
-    def get_embedding_text_list(items: list["BaseModel"]) -> list[str]:
-
-        client = AzureOpenAI(
-            api_key=config.,
+    def get_embeddings(items: list["BaseModel"]) -> list[str]:
+        azure_open_ai_client = AzureOpenAI(
+            azure_endpoint=config.azure_openai_endpoint,
+            api_key=config.azure_openai_api_key,
             api_version="2024-06-01",
-            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
         )
-
-        texts = [x_item.get_embedding_text() for x_item in items]
-
+        item_embedding_texts = []
+        for x_item in items:
+            item_embedding_texts.append(x_item.get_embedding_text())
+        embedding_response = azure_open_ai_client.embeddings.create(
+            input=item_embedding_texts, model="text-embedding-3-large"
+        )
         embeddings = []
-
-        for text in texts:
-            response = client.embeddings.create(
-                input=text, model="text-embedding-3-large"
-            )
-            embeddings.append(response.data[0].embedding)
-
+        for data in embedding_response.data:
+            embeddings.append(data.embedding)
+        print(type(embeddings))
         return embeddings
 
     @staticmethod

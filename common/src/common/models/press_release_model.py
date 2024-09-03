@@ -22,8 +22,9 @@ class PressReleaseModel(BaseModel):
 
     @staticmethod
     def to_db_dict(items: list["PressReleaseModel"]) -> list[dict]:
+        embeddings = PressReleaseModel.get_embeddings(items)
         press_release_db_dicts = []
-        for x_item in items:
+        for x_item, x_embedding in zip(items, embeddings):
             press_release_db_dicts.append(
                 {
                     "tenant_id": x_item.tenant_id,
@@ -31,7 +32,7 @@ class PressReleaseModel(BaseModel):
                     "title": x_item.title,
                     "content": x_item.content,
                     "published_at": x_item.published_at,
-                    "embedding": "TODO",
+                    "embedding": x_embedding,
                 }
             )
         return press_release_db_dicts

@@ -28,8 +28,9 @@ class PersonModel(BaseModel):
 
     @staticmethod
     def to_db_dict(items: list["PersonModel"]) -> list[dict]:
+        embeddings = PersonModel.get_embeddings(items)
         person_db_dicts = []
-        for x_item in items:
+        for x_item, x_embedding in zip(items, embeddings):
             person_db_dicts.append(
                 {
                     "tenant_id": x_item.tenant_id,
@@ -40,7 +41,7 @@ class PersonModel(BaseModel):
                     "email_address": x_item.email_address,
                     "address": x_item.address,
                     "room": x_item.room,
-                    "embedding": "TODO",
+                    "embedding": x_embedding,
                 }
             )
         return person_db_dicts

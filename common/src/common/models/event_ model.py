@@ -24,9 +24,9 @@ class EventModel(BaseModel):
 
     @staticmethod
     def to_db_dict(items: list["EventModel"]) -> list[dict]:
-        # calc embeddings
+        embeddings = EventModel.get_embeddings(items)
         event_db_dicts = []
-        for x_item in items:
+        for x_item, x_embedding in zip(items, embeddings):
             event_db_dicts.append(
                 {
                     "tenant_id": x_item.tenant_id,
@@ -35,7 +35,7 @@ class EventModel(BaseModel):
                     "description": x_item.description,
                     "start_at": x_item.start_at,
                     "end_at": x_item.end_at,
-                    "embedding": "TODO",
+                    "embedding": x_embedding,
                 }
             )
         return event_db_dicts
