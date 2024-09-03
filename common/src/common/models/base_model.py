@@ -1,4 +1,3 @@
-import os
 from abc import ABC, abstractmethod
 
 from openai import AzureOpenAI
@@ -33,7 +32,6 @@ class BaseModel(ABC):
         embeddings = []
         for data in embedding_response.data:
             embeddings.append(data.embedding)
-        print(type(embeddings))
         return embeddings
 
     @staticmethod
