@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 from openai import AzureOpenAI
 
-from common.utitlities.config import config
+from common.config import config
 
 
 class BaseModel(ABC):
