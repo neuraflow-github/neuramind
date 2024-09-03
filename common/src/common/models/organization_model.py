@@ -4,6 +4,9 @@ from .base_model import BaseModel
 
 
 class OrganizationModel(BaseModel):
+    name: str
+    address: Optional[str] = None
+
     def __init__(
         self,
         tenant_id: str,

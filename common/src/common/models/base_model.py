@@ -6,6 +6,11 @@ from common.config import config
 
 
 class BaseModel(ABC):
+    type: str
+    db_node_name: str
+    tenant_id: str
+    source: str
+
     def __init__(self, type: str, db_node_name: str, tenant_id: str, source: str):
         self.type = type
         self.db_node_name = db_node_name

@@ -1,16 +1,16 @@
-from neuramind_common import AhaArchivEntryModel
+from neuramind_common import AhaArchiveEntryModel
 
 from .base_connector import BaseConnector
 
 
-class StandardAhaArchiveConnector(BaseConnector[AhaArchivEntryModel]):
+class StandardAhaArchiveeConnector(BaseConnector[AhaArchiveEntryModel]):
     def __init__(self):
         super().__init__()
 
-    def load(self) -> list[AhaArchivEntryModel]:
+    def load(self) -> list[AhaArchiveEntryModel]:
         # load the aha archive entries from firebase, based on phase (LIVESTAGE, PLAYGROUND, TESTBENCH)
-        test_aha_archive_entry_models = [
-            AhaArchivEntryModel(
+        test_aha_archivee_entry_models = [
+            AhaArchiveEntryModel(
                 tenant_id="test",
                 source="test",
                 title="test",
@@ -18,4 +18,4 @@ class StandardAhaArchiveConnector(BaseConnector[AhaArchivEntryModel]):
                 url="test",
             )
         ]
-        return test_aha_archive_entry_models
+        return test_aha_archivee_entry_models

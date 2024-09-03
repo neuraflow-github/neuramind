@@ -2,6 +2,10 @@ from .base_model import BaseModel
 
 
 class ServiceModel(BaseModel):
+    name: str
+    description: str
+    price: int
+
     def __init__(
         self,
         tenant_id: str,

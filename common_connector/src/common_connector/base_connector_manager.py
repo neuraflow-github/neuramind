@@ -1,10 +1,8 @@
-from typing import List
-
 from common_connector.connectors.base_connector import BaseConnector
 
 
 class BaseConnectorManager:
-    def __init__(self, tenant_id: str, connectors: List[BaseConnector]):
+    def __init__(self, tenant_id: str, connectors: list[BaseConnector]):
         self.tenant_id = tenant_id
         self.connectors = connectors
 

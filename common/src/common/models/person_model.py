@@ -4,6 +4,13 @@ from .base_model import BaseModel
 
 
 class PersonModel(BaseModel):
+    full_name: str
+    gender: Optional[str] = None
+    phone_number: Optional[str] = None
+    email_address: Optional[str] = None
+    address: Optional[str] = None
+    room: Optional[str] = None
+
     def __init__(
         self,
         tenant_id: str,

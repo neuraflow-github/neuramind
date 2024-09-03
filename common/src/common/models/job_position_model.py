@@ -1,9 +1,19 @@
+from datetime import datetime
 from typing import Optional
 
 from .base_model import BaseModel
 
 
 class JobPositionModel(BaseModel):
+    title: str
+    description: str
+    requirements: str
+    responsibilities: str
+    location: str
+    employment_type: str
+    salary: int
+    application_deadline: datetime
+
     def __init__(
         self,
         tenant_id: str,

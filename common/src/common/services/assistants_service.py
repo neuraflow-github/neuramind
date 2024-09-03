@@ -1,11 +1,11 @@
-from typing import List, Optional
+from typing import Optional
 
 from common.src.common.services.firebase import firebase
 
 
 class AssistantsService:
     @staticmethod
-    async def get_all() -> List[dict]:
+    async def get_all() -> list[dict]:
         try:
             assistants_collection_ref = firebase.db.collection("assistants")
             assistant_docs = assistants_collection_ref.stream()

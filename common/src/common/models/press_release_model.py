@@ -4,6 +4,10 @@ from .base_model import BaseModel
 
 
 class PressReleaseModel(BaseModel):
+    title: str
+    content: str
+    published_at: datetime
+
     def __init__(
         self,
         tenant_id: str,
