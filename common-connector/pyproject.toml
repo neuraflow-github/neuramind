@@ -8,7 +8,7 @@ packages = [{ include = "neuramind_common_connector", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-neuramind-common = {git = "https://github.com/neuraflow-github/neuramind.git", subdirectory = "common"}
+neuramind-common = {path = "../common", develop = true}
 
 [build-system]
 requires = ["poetry-core"]

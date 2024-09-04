@@ -2,6 +2,7 @@ import importlib.util
 import os
 
 from fastapi import FastAPI, HTTPException
+from neuramind_common.config import config
 from neuramind_common.enums.phase import Phase
 from neuramind_common.services.assistants_service import AssistantsService
 from neuramind_connector_api.config import config
@@ -25,7 +26,7 @@ async def connect_tenant(tenant_id: str, phase: Phase):
 
     # Get the folder with the connector code
     if phase == Phase.TESTBENCH:
-        base_path = os.environ.get("TESTBENCH_CUSTOM_CONNECTORS_PATH")
+        base_path = config.testbench_connectors_path
     elif phase in [Phase.PLAYGROUND, Phase.LIVESTAGE]:
         base_path = f"custom-connectors/{phase.lower()}"
     else:

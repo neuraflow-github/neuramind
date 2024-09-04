@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "connector-api"
+name = "neuramind-connector-api"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
@@ -7,9 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-neuramind-common = {git = "https://github.com/neuraflow-github/neuramind.git", subdirectory = "common"}
-neuramind-common-connector = {git = "https://github.com/neuraflow-github/neuramind.git", subdirectory = "common-connector"}
 fastapi = {extras = ["all"], version = "^0.112.2"}
+neuramind-common = {path = "../common", develop = true}
+neuramind-common-connector = {path = "../common-connector", develop = true}
 
 
 [build-system]

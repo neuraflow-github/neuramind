@@ -1230,12 +1230,12 @@ pyarrow = ["pyarrow (>=1.0.0)"]
 
 [[package]]
 name = "neuramind-common"
-version = "0.1.3"
+version = "0.1.4"
 description = ""
 optional = false
 python-versions = "^3.12"
 files = []
-develop = false
+develop = true
 
 [package.dependencies]
 firebase-admin = "^6.5.0"
@@ -1246,30 +1246,24 @@ pydantic-settings = "^2.4.0"
 python-dotenv = "^1.0.1"
 
 [package.source]
-type = "git"
-url = "https://github.com/neuraflow-github/neuramind.git"
-reference = "HEAD"
-resolved_reference = "5c7ef19933e1c2f6036e52f8ce7b3fab2e5b796b"
-subdirectory = "common"
+type = "directory"
+url = "../common"
 
 [[package]]
 name = "neuramind-common-connector"
-version = "0.1.3"
+version = "0.1.4"
 description = ""
 optional = false
 python-versions = "^3.12"
 files = []
-develop = false
+develop = true
 
 [package.dependencies]
-neuramind-common = {git = "https://github.com/neuraflow-github/neuramind.git", subdirectory = "common"}
+neuramind-common = {path = "../common", develop = true}
 
 [package.source]
-type = "git"
-url = "https://github.com/neuraflow-github/neuramind.git"
-reference = "HEAD"
-resolved_reference = "5c7ef19933e1c2f6036e52f8ce7b3fab2e5b796b"
-subdirectory = "common-connector"
+type = "directory"
+url = "../common-connector"
 
 [[package]]
 name = "openai"
@@ -2431,4 +2425,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "5ccd56ae7b6b815308565910886049efb70b2a0a2dfe0e5f6f8eaa53dc137807"
+content-hash = "69a06de3362c7d2def294e28f2fa92b1faac9c429cdd8c2e27a642050ca36b88"

@@ -9,6 +9,7 @@ class MyConfig(BaseSettings):
     # Keep sorted
     azure_openai_api_key: str = Field(env="AZURE_OPENAI_API_KEY")
     azure_openai_endpoint: str = Field(env="AZURE_OPENAI_ENDPOINT")
+    firebase_credentials_path: str = Field(env="FIREBASE_CREDENTIALS_PATH")
 
     class Config:
         env_file = ".env"

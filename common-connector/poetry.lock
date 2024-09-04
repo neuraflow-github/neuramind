@@ -956,7 +956,7 @@ description = ""
 optional = false
 python-versions = "^3.12"
 files = []
-develop = false
+develop = true
 
 [package.dependencies]
 firebase-admin = "^6.5.0"
@@ -967,11 +967,8 @@ pydantic-settings = "^2.4.0"
 python-dotenv = "^1.0.1"
 
 [package.source]
-type = "git"
-url = "https://github.com/neuraflow-github/neuramind.git"
-reference = "HEAD"
-resolved_reference = "fcbacff5a8727018a629cd65cd6636ef32001a29"
-subdirectory = "common"
+type = "directory"
+url = "../common"
 
 [[package]]
 name = "openai"
@@ -1674,4 +1671,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "c15bcc6bfa60a908c49993267719c9307830103f6c53ddfb5d3bac3e73c12c2e"
+content-hash = "046b908cabdc035e712659ac2c7e5c5e1cf193766fb1fe7b1cb5f094aa154042"
