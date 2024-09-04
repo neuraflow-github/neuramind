@@ -6,8 +6,8 @@ from .base_connector import BaseConnector
 
 
 class BaseEventsConnector(ABC, BaseConnector[EventModel]):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, tenant_id: str):
+        super().__init__(tenant_id)
 
     @abstractmethod
     def load(self) -> list[EventModel]:

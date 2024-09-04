@@ -2,6 +2,9 @@ from neuramind_common_connector.connectors.base_connector import BaseConnector
 
 
 class BaseConnectorManager:
+    tenant_id: str
+    connectors: list[BaseConnector]
+
     def __init__(self, tenant_id: str, connectors: list[BaseConnector]):
         self.tenant_id = tenant_id
         self.connectors = connectors

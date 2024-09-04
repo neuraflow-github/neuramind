@@ -26,7 +26,21 @@ class JobPositionModel(BaseModel):
         self.address = address
 
     def get_embedding_text(self) -> str:
-        return f"{self.name}\n\n{self.address}"
+        return "\n".join(
+            filter(
+                None,
+                [
+                    self.title,
+                    self.description,
+                    self.requirements,
+                    self.responsibilities,
+                    self.location,
+                    self.employment_type,
+                    str(self.salary),
+                    self.application_deadline.isoformat(),
+                ],
+            )
+        )
 
     @staticmethod
     def to_db_dict(items: list["JobPositionModel"]) -> list[dict]:

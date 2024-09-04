@@ -20,7 +20,15 @@ class EventModel(BaseModel):
         self.end_at = end_at
 
     def get_embedding_text(self) -> str:
-        return f"{self.title}\n\n{self.description}"
+        return "\n".join(
+            filter(
+                None,
+                [
+                    self.title,
+                    self.description,
+                ],
+            )
+        )
 
     @staticmethod
     def to_db_dict(items: list["EventModel"]) -> list[dict]:

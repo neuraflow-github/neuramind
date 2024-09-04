@@ -19,7 +19,15 @@ class OrganizationModel(BaseModel):
         self.address = address
 
     def get_embedding_text(self) -> str:
-        return f"{self.name}\n\n{self.address}"
+        return "\n".join(
+            filter(
+                None,
+                [
+                    self.name,
+                    self.address,
+                ],
+            )
+        )
 
     @staticmethod
     def to_db_dict(items: list["OrganizationModel"]) -> list[dict]:

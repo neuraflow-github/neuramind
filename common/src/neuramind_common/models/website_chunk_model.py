@@ -1,7 +1,7 @@
-from .base_model import BaseModel
+from .base_unstructured_model import BaseUnstructuredModel
 
 
-class WebsiteChunkModel(BaseModel):
+class WebsiteChunkModel(BaseUnstructuredModel):
     def __init__(
         self,
         tenant_id: str,

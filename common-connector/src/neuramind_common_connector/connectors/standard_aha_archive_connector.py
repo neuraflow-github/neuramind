@@ -4,8 +4,8 @@ from .base_connector import BaseConnector
 
 
 class StandardAhaArchiveConnector(BaseConnector[AhaArchiveEntryModel]):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, tenant_id: str):
+        super().__init__(tenant_id)
 
     def load(self) -> list[AhaArchiveEntryModel]:
         # load the aha archive entries from firebase, based on phase (LIVESTAGE, PLAYGROUND, TESTBENCH)

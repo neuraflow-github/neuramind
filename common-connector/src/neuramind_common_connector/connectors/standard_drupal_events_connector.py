@@ -4,8 +4,8 @@ from .base_events_connector import BaseEventsConnector
 
 
 class StandardDrupalEventsConnector(BaseEventsConnector):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, tenant_id: str):
+        super().__init__(tenant_id)
 
     def load(self) -> list[EventModel]:
         # load the events from Drupal API

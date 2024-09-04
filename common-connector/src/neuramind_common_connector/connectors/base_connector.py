@@ -7,8 +7,8 @@ T = TypeVar("T", bound=BaseModel)
 
 
 class BaseConnector(ABC, Generic[T]):
-    def __init__(self):
-        pass
+    def __init__(self, tenant_id: str):
+        self.tenant_id = tenant_id
 
     @abstractmethod
     def load(self) -> list[T]:

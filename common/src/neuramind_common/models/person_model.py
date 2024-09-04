@@ -31,7 +31,18 @@ class PersonModel(BaseModel):
         self.room = room
 
     def get_embedding_text(self) -> str:
-        return f"{self.full_name} {self.gender or ''} {self.email_address or ''} {self.address or ''} {self.room or ''}"
+        return "\n".join(
+            filter(
+                None,
+                [
+                    self.full_name,
+                    self.gender,
+                    self.email_address,
+                    self.address,
+                    self.room,
+                ],
+            )
+        )
 
     @staticmethod
     def to_db_dict(items: list["PersonModel"]) -> list[dict]:
