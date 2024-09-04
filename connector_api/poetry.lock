@@ -1230,7 +1230,7 @@ pyarrow = ["pyarrow (>=1.0.0)"]
 
 [[package]]
 name = "neuramind-common"
-version = "0.1.2"
+version = "0.1.3"
 description = ""
 optional = false
 python-versions = "^3.12"
@@ -1249,12 +1249,12 @@ python-dotenv = "^1.0.1"
 type = "git"
 url = "https://github.com/neuraflow-github/neuramind.git"
 reference = "HEAD"
-resolved_reference = "dadd2a82fe088ba62cf0e1e4898deaab454fa36f"
+resolved_reference = "5c7ef19933e1c2f6036e52f8ce7b3fab2e5b796b"
 subdirectory = "common"
 
 [[package]]
 name = "neuramind-common-connector"
-version = "0.1.2"
+version = "0.1.3"
 description = ""
 optional = false
 python-versions = "^3.12"
@@ -1268,7 +1268,7 @@ neuramind-common = {git = "https://github.com/neuraflow-github/neuramind.git", s
 type = "git"
 url = "https://github.com/neuraflow-github/neuramind.git"
 reference = "HEAD"
-resolved_reference = "dadd2a82fe088ba62cf0e1e4898deaab454fa36f"
+resolved_reference = "5c7ef19933e1c2f6036e52f8ce7b3fab2e5b796b"
 subdirectory = "common-connector"
 
 [[package]]
