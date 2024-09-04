@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "neuramind-common-connector"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-packages = [{ include = "common_connector", from = "src" }]
+packages = [{ include = "neuramind_common_connector", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"

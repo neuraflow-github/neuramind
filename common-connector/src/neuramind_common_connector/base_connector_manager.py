@@ -1,4 +1,4 @@
-from common_connector.connectors.base_connector import BaseConnector
+from neuramind_common_connector.connectors.base_connector import BaseConnector
 
 
 class BaseConnectorManager:
