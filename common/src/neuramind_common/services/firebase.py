@@ -21,7 +21,7 @@ class Firebase:
                 # Use default credentials
                 self.app = firebase_admin.initialize_app()
             else:
-                credentials_certificate = credentials_certificate.Certificate(
+                credentials_certificate = firebase_admin.credentials.Certificate(
                     config.firebase_credentials_path
                 )
                 self.app = firebase_admin.initialize_app(credentials_certificate)

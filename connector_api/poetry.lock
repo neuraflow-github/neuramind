@@ -1249,7 +1249,7 @@ python-dotenv = "^1.0.1"
 type = "git"
 url = "https://github.com/neuraflow-github/neuramind.git"
 reference = "HEAD"
-resolved_reference = "3a0904140048dee0f1f3e95026363935c1a35993"
+resolved_reference = "dadd2a82fe088ba62cf0e1e4898deaab454fa36f"
 subdirectory = "common"
 
 [[package]]
@@ -1268,7 +1268,7 @@ neuramind-common = {git = "https://github.com/neuraflow-github/neuramind.git", s
 type = "git"
 url = "https://github.com/neuraflow-github/neuramind.git"
 reference = "HEAD"
-resolved_reference = "3a0904140048dee0f1f3e95026363935c1a35993"
+resolved_reference = "dadd2a82fe088ba62cf0e1e4898deaab454fa36f"
 subdirectory = "common-connector"
 
 [[package]]
