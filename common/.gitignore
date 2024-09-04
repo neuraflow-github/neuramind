@@ -1,0 +1,4 @@
+__pycache__
+.env
+.firebase_service_account.json
+.venv

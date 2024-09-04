@@ -3,7 +3,7 @@ from typing import Generator
 
 from neo4j import Driver, GraphDatabase, Session
 
-from common.utilities.config import config
+from neuramind_common.config import config
 
 
 class DbSessionBuilder:

@@ -3,7 +3,7 @@ import os
 import firebase_admin
 from firebase_admin import firestore
 
-from common.config import config
+from neuramind_common.config import config
 
 
 class Firebase:

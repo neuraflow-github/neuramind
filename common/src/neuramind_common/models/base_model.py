@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 from openai import AzureOpenAI
 
-from common.config import config
+from neuramind_common.config import config
 
 
 class BaseModel(ABC):

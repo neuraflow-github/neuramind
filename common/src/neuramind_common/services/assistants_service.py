@@ -1,6 +1,6 @@
 from typing import Optional
 
-from common.src.common.services.firebase import firebase
+from neuramind_common.services.firebase import firebase
 
 
 class AssistantsService:
