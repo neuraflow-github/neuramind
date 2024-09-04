@@ -2,7 +2,6 @@ import os
 
 import firebase_admin
 from firebase_admin import firestore
-
 from neuramind_common.config import config
 
 
@@ -22,8 +21,10 @@ class Firebase:
                 # Use default credentials
                 self.app = firebase_admin.initialize_app()
             else:
-                credentials = credentials.Certificate(config.firebase_credentials_path)
-                self.app = firebase_admin.initialize_app(credentials)
+                credentials_certificate = credentials_certificate.Certificate(
+                    config.firebase_credentials_path
+                )
+                self.app = firebase_admin.initialize_app(credentials_certificate)
         else:
             self.app = firebase_admin.get_app()
         self.db = firestore.client(self.app)

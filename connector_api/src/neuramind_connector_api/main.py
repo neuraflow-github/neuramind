@@ -1,13 +1,10 @@
 import importlib.util
 import os
 
-from common_neurabot import Phase
 from fastapi import FastAPI, HTTPException
-
-# Fake import for the utils method
-from utils import get_assistant_by_tenant_id
-
-from connector_api.config import config
+from neuramind_common.enums.phase import Phase
+from neuramind_common.services.assistants_service import AssistantsService
+from neuramind_connector_api.config import config
 
 app = FastAPI()
 
@@ -24,7 +21,7 @@ async def connect_outdated_tenants():
 @app.post("/connect_tenant")
 async def connect_tenant(tenant_id: str, phase: Phase):
     # Get the assistant by tenant id from firebase
-    assistant = await get_assistant_by_tenant_id(tenant_id)
+    assistant = await AssistantsService.get(tenant_id)
 
     # Get the folder with the connector code
     if phase == Phase.TESTBENCH:
