@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from neuramind_common import EventModel
+from neuramind_common.models.event_model import EventModel
 
 from .base_connector import BaseConnector
 

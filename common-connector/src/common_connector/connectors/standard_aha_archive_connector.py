@@ -1,9 +1,9 @@
-from neuramind_common import AhaArchiveEntryModel
+from neuramind_common.models.aha_archive_entry_model import AhaArchiveEntryModel
 
 from .base_connector import BaseConnector
 
 
-class StandardAhaArchiveeConnector(BaseConnector[AhaArchiveEntryModel]):
+class StandardAhaArchiveConnector(BaseConnector[AhaArchiveEntryModel]):
     def __init__(self):
         super().__init__()
 

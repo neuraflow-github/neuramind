@@ -1,4 +1,4 @@
-from neuramind_common import EventModel
+from neuramind_common.models.event_model import EventModel
 
 from .base_events_connector import BaseEventsConnector
 

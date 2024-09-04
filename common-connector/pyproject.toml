@@ -1,13 +1,14 @@
 [tool.poetry]
-name = "common-connector"
+name = "neuramind-common-connector"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
+packages = [{ include = "common_connector", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-
+neuramind-common = {git = "https://github.com/neuraflow-github/neuramind.git", subdirectory = "common"}
 
 [build-system]
 requires = ["poetry-core"]

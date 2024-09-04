@@ -1,4 +1,4 @@
-from neuramind_common import WebsiteChunkModel
+from neuramind_common.models.website_chunk_model import WebsiteChunkModel
 
 from .base_connector import BaseConnector
 

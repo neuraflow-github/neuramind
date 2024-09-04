@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Generic, TypeVar
 
-from neuramind_common import BaseModel
+from neuramind_common.models.base_model import BaseModel
 
 T = TypeVar("T", bound=BaseModel)
 
