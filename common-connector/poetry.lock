@@ -951,7 +951,7 @@ pyarrow = ["pyarrow (>=1.0.0)"]
 
 [[package]]
 name = "neuramind-common"
-version = "0.1.2"
+version = "0.1.4"
 description = ""
 optional = false
 python-versions = "^3.12"
@@ -970,7 +970,7 @@ python-dotenv = "^1.0.1"
 type = "git"
 url = "https://github.com/neuraflow-github/neuramind.git"
 reference = "HEAD"
-resolved_reference = "a8463b10ce064c8c4f0f08f9f9c1444d5676c1f7"
+resolved_reference = "fcbacff5a8727018a629cd65cd6636ef32001a29"
 subdirectory = "common"
 
 [[package]]
